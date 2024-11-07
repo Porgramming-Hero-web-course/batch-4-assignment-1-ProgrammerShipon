@@ -12,13 +12,8 @@ Problem 3:
  */
 
 function countWordOccurrences(sentence: string, word: string): number {
-  const sentenceSplitCount: number = sentence
-    .split(" ")
-    .reduce((acc: number, cur: string) => {
-      return cur.toLowerCase() == word.toLowerCase() ? acc + 1 : acc;
-    }, 1); // todo: special charter issue & partial matching count
-
-  return sentenceSplitCount;
+  const regex = new RegExp(word, "gi");
+  return sentence.match(regex)?.length as number;
 }
 
 const occurrence = countWordOccurrences(
