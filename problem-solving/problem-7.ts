@@ -19,11 +19,10 @@ class Car {
     public year: number
   ) {}
 
-  getCarAge() {
+  getCarAge(): void {
     const todayYear = new Date().getFullYear();
     const currentAge = todayYear - this.year;
     console.log(`${currentAge} (assuming current year is ${todayYear})`);
-    //  return currentAge;
   }
 }
 
